@@ -1,0 +1,68 @@
+﻿@model IEnumerable<Elecciones_itla.Models.Candidatos>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Apellido)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Foto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Estado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PartidoCan)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PuestoCan)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+
+      var photoPath ="~/imagenes/" + ((!string.IsNullOrEmpty(item.Foto) ? item.Foto : "foto-perfil.jpg" ));
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Apellido)
+            </td>
+            <td>
+                <img style="width: 200px;height: 200px" src="@photoPath" alt="Alternate Text" asp-append-version="true" />
+                @Html.DisplayFor(modelItem => item.Foto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Estado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PartidoCan.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PuestoCan.Nombre)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdCandidato">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.IdCandidato">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.IdCandidato">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

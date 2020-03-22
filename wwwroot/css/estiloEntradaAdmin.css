@@ -1,0 +1,16 @@
+﻿body {
+  
+    background-image: url('../img/fondoAdmi.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.titulo {
+  padding-right:300px;
+  padding-top:200px;
+}
+.bot{
+    padding-top:100px;
+    margin-left:500px;
+}
+

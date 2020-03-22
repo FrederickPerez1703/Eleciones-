@@ -1,0 +1,41 @@
+﻿body {
+ background-image: url('../img/fondo1.jpg');
+ background-repeat:no-repeat;
+ background-size:cover;
+ background-attachment:fixed;
+}
+.formulario{
+    background: rgba(0,0,0,.3);
+    padding: 20px;
+    border-radius:10px;
+    box-shadow:0 0 30px rgba(0,0,0, 0.568);
+    color:white;
+}
+.form-control {
+    background: rgba(0,0,0,.3);
+    border-style: none;
+    transition: 0.5s ease-in;
+    outline:none;
+    box-shadow:none;
+}
+.form-control::placeholder{
+    color:white;
+    box-shadow:none;
+    outline:none;
+}
+.form-control:focus{
+    background:none;
+}
+.ingresar {
+    background: #222A3F;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: 700 !important;
+    color: white;
+    box-shadow: 0 0 30px rgba(0,0,0, 0.568);
+    transition:0.5s ease-in;
+    border-radius:20px;
+}
+.ingresar:hover{
+    color:white;
+}
